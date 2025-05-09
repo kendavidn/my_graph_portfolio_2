@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kene David Nwosu | Generative AI for Work & Research Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --dark-teal: #014d4e;
+      --light-teal: #b7e5e4;
+      --peach: #fff7e6;
+      --white: #ffffff;
+
+      --bg: var(--peach);
+      --text: var(--dark-teal);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      background: var(--bg);
+      color: var(--text);
+      scroll-behavior: smooth;
+    }
+
+    a {
+      color: var(--dark-teal);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    /* ───────────── Top Navigation ───────────── */
+    header {
+      padding: 1.5rem 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      font-size: 1.25rem;
+      font-weight: 700;
+    }
+
+    nav {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      position: relative;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -2px;
+      width: 0;
+      height: 2px;
+      background: var(--dark-teal);
+      transition: width 0.2s ease;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    /* ───────────── Hero Section ───────────── */
+    .hero {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 2.5rem;
+      padding: 4rem 1rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    /* dotted line */
+    .hero::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 50%;
+      border-top: 2px dashed var(--dark-teal);
+      z-index: 0;
+    }
+
+    .intro-left,
+    .intro-right {
+      z-index: 1;
+    }
+
+    .intro-left p {
+      max-width: 260px;
+      font-size: 1.1rem;
+    }
+
+    .intro-right h1 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      line-height: 1.1;
+      font-weight: 700;
+    }
+
+    .intro-right small {
+      display: block;
+      margin-top: 0.25rem;
+      font-style: italic;
+      font-size: 0.9rem;
+    }
+
+    /* portrait */
+    .photo-container {
+      position: relative;
+      width: 280px;
+      height: 320px;
+      z-index: 1;
+    }
+
+    .photo-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50% 45% 50% 50% / 60% 40% 60% 55%;
+      position: relative;
+      z-index: 1;
+    }
+
+    .photo-container::before {
+      content: '';
+      position: absolute;
+      top: 18px;
+      left: -22px;
+      width: 100%;
+      height: 100%;
+      background: var(--light-teal);
+      border-radius: 50% 45% 50% 50% / 60% 40% 60% 55%;
+      z-index: 0;
+      transform: rotate(-8deg);
+    }
+
+    /* ───────────── Sections ───────────── */
+    section {
+      padding: 4rem 1rem;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    section h2 {
+      font-size: 1.75rem;
+      margin-bottom: 1rem;
+      color: var(--dark-teal);
+    }
+
+    /* About Me list */
+    .about-me ul {
+      list-style: disc inside;
+      margin-top: 0.75rem;
+    }
+
+    /* Course Details */
+    .details {
+      display: grid;
+      gap: 0.5rem;
+      margin-top: 1.25rem;
+      font-size: 1rem;
+    }
+
+    .details span {
+      font-weight: 600;
+    }
+
+    /* Submissions */
+    .submissions ul {
+      list-style: none;
+      margin-top: 1rem;
+    }
+
+    .submissions li {
+      background: var(--white);
+      border: 2px dashed var(--light-teal);
+      border-radius: 0.75rem;
+      padding: 0.75rem 1rem;
+      margin-bottom: 0.75rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--dark-teal);
+      color: var(--white);
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.875rem;
+    }
+
+    @media (max-width: 850px) {
+      .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .hero::after { display: none; }
+
+      .photo-container { margin: 0 auto; }
+    }
+  </style>
+</head>
+<body>
+  <!-- ───────────── Header & Navigation ───────────── -->
+  <header>
+    <div class="brand">Kene&nbsp;Nwosu</div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#course">Course</a>
+      <a href="#submissions">Submissions</a>
+    </nav>
+  </header>
+
+  <!-- ───────────── Hero Section ───────────── -->
+  <section class="hero" id="about">
+    <div class="intro-left">
+      <p>I'm a PhD candidate, R developer, and data scientist exploring how generative&nbsp;AI can accelerate public‑health research.</p>
+    </div>
+
+    <div class="photo-container">
+      <img src="profile.jpg" alt="Portrait of Kene David Nwosu">
+    </div>
+
+    <div class="intro-right">
+      <h1>Kene<br>David&nbsp;Nwosu</h1>
+      <small>(you can call me Kene)</small>
+    </div>
+  </section>
+
+  <!-- ───────────── About the Course ───────────── -->
+  <section id="course">
+    <h2>Generative&nbsp;AI for Work&nbsp;&amp;&nbsp;Research Productivity</h2>
+    <p>This 8‑week live‑online certification shows researchers and knowledge workers how to automate analysis, content creation, and routine tasks—<em>without writing code</em>.</p>
+
+    <div class="details">
+      <div><span>Format:</span> Live online certification</div>
+      <div><span>Duration:</span> 8 weeks (starting May 9, 2025)</div>
+      <div><span>Workshops:</span> Fridays 3 pm GMT&nbsp;or Sundays 5 pm GMT</div>
+      <div><span>Tuition:</span> $250 / month × 2 months (risk‑free first month)</div>
+    </div>
+
+    <h3 style="margin-top:2rem; font-size:1.35rem;">Modules</h3>
+    <ul class="about-me" style="margin-top:0.5rem; list-style: disc inside;">
+      <li>Documents, Presentations &amp; Websites</li>
+      <li>Automated Data Analysis</li>
+      <li>GenAI for Research &amp; Text Analysis</li>
+      <li>Custom GPTs and Chatbots</li>
+      <li>AI Workflows for Task Automation</li>
+      <li>GenAI for Communication &amp; Outreach</li>
+      <li>Capstone Project &amp; Showcase</li>
+    </ul>
+  </section>
+
+  <!-- ───────────── Weekly Submissions ───────────── -->
+  <section id="submissions" class="submissions">
+    <h2>Weekly Submissions</h2>
+    <p>Links to my weekly assignments will appear here as the course progresses.</p>
+    <ul>
+      <li>Week 1 — Documents, Presentations &amp; Websites <span><a href="#">Coming soon</a></span></li>
+      <li>Week 2 — Automated Data Analysis <span><a href="#">Coming soon</a></span></li>
+      <li>Week 3 — GenAI for Research &amp; Text Analysis <span><a href="#">Coming soon</a></span></li>
+      <li>Week 4 — Custom GPTs and Chatbots <span><a href="#">Coming soon</a></span></li>
+      <li>Week 5 — AI Workflows for Task Automation <span><a href="#">Coming soon</a></span></li>
+      <li>Week 6 — GenAI for Communication &amp; Outreach <span><a href="#">Coming soon</a></span></li>
+      <li>Week 7 — Capstone Scoping <span><a href="#">Coming soon</a></span></li>
+      <li>Week 8 — Capstone Showcase <span><a href="#">Coming soon</a></span></li>
+    </ul>
+  </section>
+
+  <!-- ───────────── Footer ───────────── -->
+  <footer>
+    <p>&copy; <span id="year"></span> Kene David Nwosu. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
